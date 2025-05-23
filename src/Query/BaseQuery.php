@@ -5,24 +5,24 @@ namespace App\Query;
 use App\Core\Database;
 use PDO;
 
-/***
+/**
    * This classes Handles BaseQueries for PDO
    */
-abstract class BaseQuery
-{
+abstract class BaseQuery{
     protected PDO $db;
 
-    /***
+    /**
    * This is function initializes the pdo for the Base Query
    */
-    public function __construct()
-    {
+    public function __construct(){
         $this->db = DataBase::pdo();
     }
 
-    // Basic example: fetch all records from a table
-    protected function getAll(string $table): array
-    {
+     /**
+   * Basic example: fetch all records from a table
+   * @param string BaseQuery
+   */
+    protected function getAll(string $table): array{
         $stmt = $this->db->query("SELECT * FROM {$table}");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

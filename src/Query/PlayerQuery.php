@@ -8,10 +8,16 @@ use PDO;
  *
  * Handles the Player Queries
  */
-class PlayerQuery extends BaseQuery
-{
-    function addPlayer($emid,$emname,$type,$points)
-    {
+class PlayerQuery extends BaseQuery{
+   /**
+   * To Add player in the DB
+   * @param string emid
+   * @param string emname
+   * @param string type
+   * @param string points
+   * @return bool statusquery
+   */
+    function addPlayer($emid,$emname,$type,$points){
         $stmt = $this->db->prepare("
             INSERT INTO players (employee_id,employee_name, points, player_type)
             VALUES (?, ?, ?,?)
@@ -19,9 +25,11 @@ class PlayerQuery extends BaseQuery
 
         return $stmt->execute([$emid, $emname, $points, $type]);
     }
-
-    function getAllPlayers()
-    {
+    /**
+   * To Add player in the DB
+   * @return array PlayerList
+   */
+    function getAllPlayers(){
         $stmt = $this->db->prepare("
             SELECT * FROM players
         ");
@@ -29,8 +37,12 @@ class PlayerQuery extends BaseQuery
         return $stmt->fetchAll();
     }
 
-    function playerById($emplyeeid)
-    {
+    /**
+   * To Add player in the DB
+   * @param string employeeid
+   * @return array PlayerQuery
+   */
+    function playerById($emplyeeid){
         $stmt = $this->db->prepare("
             SELECT employee_name, points, player_type
             FROM players

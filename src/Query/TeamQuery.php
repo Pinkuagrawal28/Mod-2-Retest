@@ -2,14 +2,16 @@
 namespace App\Query;
 
 /**
- * Class PlayerQuery
+ * Class TeamQuery
  *
- * Handles the Player Queries
+ * Handles the Team Queries
  */
-class TeamQuery extends BaseQuery
-{
-    public function getTheTeam()
-    {
+class TeamQuery extends BaseQuery{
+    /**
+   * To get the Team
+   * @return array yourteam
+   */
+    public function getTheTeam(){
         return [];
     }
 }

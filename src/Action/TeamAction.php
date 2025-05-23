@@ -12,13 +12,16 @@ use App\Service\RedisService;
    */
 class TeamAction{
   /**
-   * Function to Add Player to the Database
+   * Function Intialize the Redis and setup the Points
    */
   public function __construct(){
     $redis = new RedisService();
     $redis->set("point",100);
     $redis->set("strength",0);
   }
+  /**
+   * Function to add the Players avaliable to your current Team
+   */
   public function add(){
     $emid = $_POST["player_id"];
 

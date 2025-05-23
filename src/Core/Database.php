@@ -7,11 +7,18 @@ use PDOException;
 use Exception;
 use Predis\Client as RedisClient;
 
+/***
+   * This classes Handles Database Connection
+   */
 class Database
 {
     private static ?PDO $pdo = null;
     private static ?RedisClient $redis = null;
 
+    /***
+   * This is function connects with the db via PDO
+   * @return Object PDO
+   */
     public static function pdo(): PDO
     {
         if (self::$pdo) {
@@ -32,6 +39,10 @@ class Database
         return self::$pdo;
     }
 
+    /***
+   * This is function connects with the Redis via Predis Client
+   * @return Object Redis
+   */
     public static function redis(): RedisClient
     {
         if (self::$redis) {

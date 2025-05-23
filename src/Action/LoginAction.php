@@ -20,7 +20,7 @@ class LoginAction{
     $userData  = $user->getUser($mail,$password);
 
     if($userData){
-      if($userData["role"]=="admin"){
+      if($userData[0]["role"]=="admin"){
         $_SESSION["role"] = "admin";
         $_SESSION["name"] = $mail;
         header('Location: /player');
