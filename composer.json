@@ -1,0 +1,21 @@
+{
+  "name": "ipl/ipl",
+  "description": "IPL auction",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    },
+    "files": [
+      "src/Debug/dd.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "PinkuInraft",
+      "email": "pinkuagarwal2831@gmail.com"
+    }
+  ],
+  "require": {
+    "predis/predis": "^3.0"
+  }
+}
